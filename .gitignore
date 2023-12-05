@@ -51,9 +51,6 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# dotenv environment variable files
-.env*
-
 # gatsby files
 .cache/
 public
@@ -67,3 +64,22 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# ---
+
+# Gatsby custom config debug files
+WordPress/GraphQL
+
+# Gatsby custom config build files
+.wordpress-cache
+
+# GraphQL scheme files
+.graphqlconfig
+schema.graphql
+
+# IDE files
+.idea
+.vscode
+
+# WordPress files
+wp/wp-content/uploads

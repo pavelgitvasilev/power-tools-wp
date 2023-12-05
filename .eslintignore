@@ -1,0 +1,10 @@
+.well-known
+.cache
+.idea
+.vscode
+node_modules
+static
+public
+rest
+.husky
+wp

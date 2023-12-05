@@ -1,0 +1,15 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-rational-order", "stylelint-prettier/recommended"],
+    "plugins": ["stylelint-order"],
+    "customSyntax": "@stylelint/postcss-css-in-js",
+    "rules": {
+        "value-no-vendor-prefix": null,
+        "no-duplicate-selectors": null,
+        "function-no-unknown": null,
+        "value-keyword-case": null,
+        "font-family-name-quotes": null,
+        "selector-id-pattern": null,
+        "selector-class-pattern": null,
+        "custom-property-empty-line-before": "never"
+    }
+}
