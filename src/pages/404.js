@@ -1,15 +1,27 @@
-import * as React from "react"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+// libraries
+import React from 'react';
+// components
+// import { SEO } from 'components/SEO';
+import { Content404 } from 'components/Content404';
+import { GlobalStyles } from 'components/UI/GlobalStyles';
+import { GlobalGridVars } from 'components/UI/Grid';
+import { Layout } from 'components/Layout';
 
 const NotFoundPage = () => (
-  <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+    <Layout>
+        <GlobalStyles />
+        <GlobalGridVars />
+        <Content404 />
+    </Layout>
+);
 
-export const Head = () => <Seo title="404: Not Found" />
+export default NotFoundPage;
 
-export default NotFoundPage
+// export const Head = () => {
+//     const seoData = {
+//         title: 'Página no encontrada - Plazo.es',
+//         metaRobotsNofollow: 'follow',
+//         metaRobotsNoindex: 'index',
+//     };
+//     return <SEO data={seoData} />;
+// };

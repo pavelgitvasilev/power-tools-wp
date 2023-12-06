@@ -1,20 +1,43 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { createProxyMiddleware } = require('http-proxy-middleware');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-  },
+    siteMetadata: {
+        title: `Power-tools.by`,
+        description: `Acabo de bajarme la app de www.power-tools.by`,
+        author: `Marketing Dev Team`,
+        siteUrl: `https://power-tools.by`,
+    },
+    trailingSlash: `always`,
+    developMiddleware: (app) => {
+        app.use(
+            process.env.REST_URL,
+            createProxyMiddleware({
+                target: process.env.REST_PROXY,
+                changeOrigin: true,
+            })
+        );
+    },
   plugins: [
+    {
+        resolve: `gatsby-source-wordpress`,
+        options: {
+            url: `${process.env.WPGRAPHQL_URL}`,
+            schema: {
+                perPage: 6,
+                requestConcurrency: 1,
+                timeout: 60000,
+            },
+            production: {
+                hardCacheMediaFiles: true,
+            },
+        },
+    },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
