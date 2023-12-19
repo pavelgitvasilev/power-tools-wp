@@ -18,11 +18,13 @@ const Page = ({ data }) => {
         <Layout data={data.page}>
             <GlobalStyles />
             <GlobalGridVars />
-            {layouts ? (
-                layouts.map((item, index) => (
-                    <React.Fragment key={item.fieldGroupName + index}>{renderBlock(item, isFrontPage)}</React.Fragment>
-                ))
-            ) : null}
+            {layouts
+                ? layouts.map((item, index) => (
+                      <React.Fragment key={item.fieldGroupName + index}>
+                          {renderBlock(item, isFrontPage)}
+                      </React.Fragment>
+                  ))
+                : null}
         </Layout>
     );
 };

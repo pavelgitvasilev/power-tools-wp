@@ -1,7 +1,7 @@
 // libraries
 import React from 'react';
 // components
-// import { SEO } from 'components/SEO';
+import { SEO } from 'components/SEO';
 import { Content404 } from 'components/Content404';
 import { GlobalStyles } from 'components/UI/GlobalStyles';
 import { GlobalGridVars } from 'components/UI/Grid';
@@ -17,11 +17,11 @@ const NotFoundPage = () => (
 
 export default NotFoundPage;
 
-// export const Head = () => {
-//     const seoData = {
-//         title: 'Página no encontrada - Plazo.es',
-//         metaRobotsNofollow: 'follow',
-//         metaRobotsNoindex: 'index',
-//     };
-//     return <SEO data={seoData} />;
-// };
+export const Head = () => {
+    const seoData = {
+        title: 'Página no encontrada - Plazo.es',
+        metaRobotsNofollow: 'follow',
+        metaRobotsNoindex: 'index',
+    };
+    return <SEO data={seoData} />;
+};

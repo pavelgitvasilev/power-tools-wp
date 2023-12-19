@@ -1,8 +1,5 @@
 export const API = {
-    CANONICAL:
-        process.env.NODE_ENV === 'development'
-            ? 'https://power-tools-master.by'
-            : 'https://power-tools.by',
+    CANONICAL: process.env.NODE_ENV === 'development' ? 'https://power-tools-master.by' : 'https://power-tools.by',
     SEND_CONTACTS_FORM: '/rest/sendContactsForm.php',
 };
 

@@ -51,6 +51,7 @@ const StyledContent404 = styled.div`
         padding-top: 130px;
         overflow: hidden;
     }
+    /* stylelint-disable-next-line at-rule-empty-line-before */
     @keyframes rotate {
         0% {
             transform: rotate(0);
@@ -60,6 +61,7 @@ const StyledContent404 = styled.div`
             transform: rotate(1turn);
         }
     }
+    /* stylelint-disable-next-line at-rule-empty-line-before */
     @keyframes flo {
         50% {
             transform: translateY(25px);

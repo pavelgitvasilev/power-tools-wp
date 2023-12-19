@@ -3,32 +3,21 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 export const SEO = ({
-    data: {
-        title: seoTitle,
-        metaDesc: seoDesc,
-        canonical: seoCanonical,
-        metaRobotsNofollow,
-        metaRobotsNoindex,
-    },
+    data: { title: seoTitle, metaDesc: seoDesc, canonical: seoCanonical, metaRobotsNofollow, metaRobotsNoindex },
 }) => {
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                    }
+    const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
                 }
             }
-        `
-    );
+        }
+    `);
     const hostname = typeof window !== 'undefined' ? window.location.hostname : null;
-    const isNoIndex = [
-        'plazo-es.frm-qa.idfaws.com',
-        'qa-delivery-solva-es-release.moneyman.ru',
-    ].includes(hostname);
-    let headTitle = seoTitle || `${site.siteMetadata.title} - Plazo`;
+    const isNoIndex = ['plazo-es.frm-qa.idfaws.com', 'qa-delivery-solva-es-release.moneyman.ru'].includes(hostname);
+    const headTitle = seoTitle || `${site.siteMetadata.title} - Plazo`;
     const description = seoDesc || site.siteMetadata.description;
     let canonical = seoCanonical;
     let indexMetatag = '';
